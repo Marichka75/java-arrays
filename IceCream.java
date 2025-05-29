@@ -1,8 +1,35 @@
+import java.util.Scanner;
+
 public class IceCream {
     public static void main(String[] args) {
         
         //Vamos a hacer un programa que haga un pedido online por cada helado ordenado, vamos a escoger cuantas bolas de helado le pondremos y sus sabores.
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("¿Cuántas bolas de helado quieres?: ");
+        int quantity = scanner.nextInt();
+        scanner.nextLine();
+
+        String[] flavors = new String[quantity];
+        System.out.println("\nPerfecto! Ahora escoge de qué sabor quieres cada helado:");
+        System.out.println("    0. Chocolate");
+        System.out.println("    1. Fresa");
+        System.out.println("    2. Vainilla\n");
+
+        for (int i = 0; i < quantity; i++) {
+            System.out.print("    " + i + ". ");
+            flavors[i] = scanner.nextLine();
+        }
+        System.out.println("\n¡Gracias por tu orden! Has pedido los siguientes sabores:");
+        for (int i = 0; i < flavors.length; i++) {
+            System.out.println("    " + i + ". " + flavors[i]);
+        }
+        System.out.print("\nEs correcto? presiona INTRO para continuar");
+        scanner.nextLine();
+
+        System.out.println("\nListo, tenemos tu orden! Acércate al mostrador y Mariya te entregará tu helado.");
+
+        scanner.close();
         //Ejemplo de como debe mostrarse en la terminal:
         /* 
             ¿Cuántas bolas de helado quieres?: 3
